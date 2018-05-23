@@ -165,4 +165,4 @@ client.on('guildDelete', (guild) => {
   client.user.setGame(prefix+"help | Used in "+(info.guildcount+client.guilds.size)+" guilds | "+info.packcount+" packs installed");
 });
 
-client.login('Mzg1MjEzOTIwNjkwMDQ0OTI5.DP-F7g.wAsG8zU-t0B4Wlk4pcoQHVziYAM');
+client.login(process.env.BOT_TOKEN);
