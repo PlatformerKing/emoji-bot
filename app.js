@@ -4,11 +4,11 @@ const client = new Discord.Client();
 const prefix = "'";
 const fs = require("fs");
 
-let info = JSON.parse(fs.readFileSync("./info.json"));
+//let info = JSON.parse(fs.readFileSync("./info.json"));
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(prefix+"help | Used in "+(info.guildcount+client.guilds.size)+" guilds | "+info.packcount+" packs installed");
+  //client.user.setGame(prefix+"help | Used in "+(info.guildcount+client.guilds.size)+" guilds | "+info.packcount+" packs installed");
 });
 
 var emojiPacks = {
@@ -104,11 +104,11 @@ client.on('message', message => {
             message.channel.send("Adding emoji pack...");
             num = f.length;
             clearTimeout(leaveTimer);
-            if (!info.packcount) {
-              info.packcount = 0;
-            }
-            info.packcount++;
-            client.user.setGame(prefix+"help | Used in "+(info.guildcount+client.guilds.size)+" guilds | "+info.packcount+" packs installed");
+            //if (!info.packcount) {
+              //info.packcount = 0;
+            //}
+            //info.packcount++;
+            //client.user.setGame(prefix+"help | Used in "+(info.guildcount+client.guilds.size)+" guilds | "+info.packcount+" packs installed");
             leaveTimer = setTimeout(function() {
               message.channel.send("<@"+message.guild.ownerID+">**, are you done with me?**\nIf you are done adding emoji packs, you can use the command `'leave` and I will leave your server.");
             }, 300000);
@@ -153,16 +153,16 @@ client.on('message', message => {
     message.channel.send("<:blobwave:385423961867157504> Goodbye!");
     message.guild.leave();
   }
-  fs.writeFile("./info.json", JSON.stringify(info), (err) => {
-        if (err) console.error(err);
-  });
+  //fs.writeFile("./info.json", JSON.stringify(info), (err) => {
+        //if (err) console.error(err);
+  //});
 });
 client.on('guildDelete', (guild) => {
-  if (!info.guildcount) {
+  /*if (!info.guildcount) {
     info.guildcount = 0;
   }
   info.guildcount ++;
-  client.user.setGame(prefix+"help | Used in "+(info.guildcount+client.guilds.size)+" guilds | "+info.packcount+" packs installed");
+  client.user.setGame(prefix+"help | Used in "+(info.guildcount+client.guilds.size)+" guilds | "+info.packcount+" packs installed");*/
 });
 
 client.login(process.env.BOT_TOKEN);
