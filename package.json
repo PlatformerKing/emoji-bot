@@ -1,10 +1,10 @@
 {
-  "name": "Test",
-  "description": "Test",
+  "name": "EmojiPacks",
+  "description": "A bot that adds emojis to your Discord server!",
   "version": "0.0.0",
-  "main": "bot.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "discord.js": "11.1.0",
